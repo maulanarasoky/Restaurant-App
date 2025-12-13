@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class RestaurantTextStyles {
   static const TextStyle _commonStyle = TextStyle(
-    fontFamily: 'IBMPlexSansCondensed',
+    fontFamily: 'Poppins',
   );
 
   /// displayLarge Text Style

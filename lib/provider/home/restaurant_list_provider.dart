@@ -1,12 +1,11 @@
 import 'package:flutter/widgets.dart';
+import 'package:restaurant_app/data/api/api_services.dart';
 import 'package:restaurant_app/static/restaurant_list_result_state.dart';
 
 class RestaurantListProvider extends ChangeNotifier {
-  final ApiService _apiService;
+  final ApiServices _apiService;
 
-  RestaurantListProvider({
-    this._apiService,
-  });
+  RestaurantListProvider(this._apiService);
 
   RestaurantListResultState _resultState = RestaurantListNoneState();
 
@@ -28,7 +27,7 @@ class RestaurantListProvider extends ChangeNotifier {
       }
     } on Exception catch (e) {
       _resultState = RestaurantListErrorState(e.toString());
-      notifyListeners()
+      notifyListeners();
     }
   }
 }

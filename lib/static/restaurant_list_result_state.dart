@@ -1,3 +1,5 @@
+import 'package:restaurant_app/data/model/restaurant.dart';
+
 sealed class RestaurantListResultState {}
 
 class RestaurantListNoneState extends RestaurantListResultState {}

@@ -14,21 +14,34 @@ class BodyOfDetailScreenWidget extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            Image.network(restaurant.picture, fit: BoxFit.cover),
+            Hero(
+              tag: restaurant.id,
+              child: Image.network(restaurant.picture, fit: BoxFit.cover),
+            ),
             const SizedBox.square(dimension: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  restaurant.name,
-                  style: Theme.of(context).textTheme.headlineLarge,
+                Expanded(
+                  child: Text(
+                    restaurant.name,
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  ),
                 ),
-                Text(
-                  restaurant.city,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w400),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Text(
+                    restaurant.city,
+                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                 ),
               ],
             ),

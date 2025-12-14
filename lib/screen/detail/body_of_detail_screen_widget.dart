@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
-import 'package:restaurant_app/data/model/restaurant.dart';
+import 'package:restaurant_app/data/model/restaurant_detail.dart';
 
 class BodyOfDetailScreenWidget extends StatelessWidget {
   const BodyOfDetailScreenWidget({super.key, required this.restaurant});
 
-  final Restaurant restaurant;
+  final RestaurantDetail restaurant;
 
   @override
   Widget build(BuildContext context) {

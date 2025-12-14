@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating/flutter_rating.dart';
 import 'package:restaurant_app/data/model/restaurant.dart';
 
 class RestaurantCard extends StatelessWidget {
@@ -16,7 +17,7 @@ class RestaurantCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -61,7 +62,10 @@ class RestaurantCard extends StatelessWidget {
                   const SizedBox.square(dimension: 6),
                   Row(
                     children: [
-                      const Icon(Icons.favorite, color: Colors.pink),
+                      StarRating(
+                        rating: restaurant.rating.toDouble(),
+                        color: Colors.orange,
+                      ),
                       const SizedBox.square(dimension: 4),
                       Expanded(
                         child: Text(

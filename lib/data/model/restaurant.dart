@@ -4,7 +4,7 @@ class Restaurant {
   final String description;
   final String picture;
   final String city;
-  final double rating;
+  final num rating;
 
   Restaurant({
     required this.id,
@@ -23,14 +23,14 @@ class Restaurant {
         "description": String description,
         "pictureId": String pictureId,
         "city": String city,
-        "rating": double rating,
+        "rating": num rating,
       } =>
         Restaurant(
           id: id,
           name: name,
           description: description,
           picture:
-              "https://restaurant-api.dicoding.dev/images/large/$pictureId",
+              "https://restaurant-api.dicoding.dev/images/small/$pictureId",
           city: city,
           rating: rating,
         ),

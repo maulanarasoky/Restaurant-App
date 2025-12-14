@@ -3,7 +3,7 @@ import 'package:restaurant_app/data/model/restaurant.dart';
 class RestaurantListResponse {
   final bool error;
   final String message;
-  final String count;
+  final int count;
   final List<Restaurant> places;
 
   RestaurantListResponse({

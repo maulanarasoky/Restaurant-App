@@ -21,18 +21,21 @@ class RestaurantCard extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ConstrainedBox(
-              constraints: const BoxConstraints(
-                maxHeight: 80,
-                minHeight: 80,
-                maxWidth: 120,
-                minWidth: 120,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
-                child: Hero(
-                  tag: restaurant.id,
-                  child: Image.network(restaurant.picture, fit: BoxFit.cover),
+            Hero(
+              tag: restaurant.id,
+              child: Material(
+                type: MaterialType.transparency,
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    maxHeight: 80,
+                    minHeight: 80,
+                    maxWidth: 120,
+                    minWidth: 120,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.network(restaurant.picture, fit: BoxFit.cover),
+                  ),
                 ),
               ),
             ),

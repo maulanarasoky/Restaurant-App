@@ -30,7 +30,7 @@ class Restaurant {
           name: name,
           description: description,
           picture:
-              "https://restaurant-api.dicoding.dev/images/small/$pictureId",
+              "https://restaurant-api.dicoding.dev/images/large/$pictureId",
           city: city,
           rating: rating,
         ),

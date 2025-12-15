@@ -14,11 +14,6 @@ class BodyOfDetailScreenWidget extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            Hero(
-              tag: restaurant.id,
-              child: Image.network(restaurant.picture, fit: BoxFit.cover),
-            ),
-            const SizedBox.square(dimension: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,7 +32,7 @@ class BodyOfDetailScreenWidget extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    restaurant.city,
+                    "${restaurant.address}, ${restaurant.city}",
                     style: Theme.of(context).textTheme.labelLarge?.copyWith(
                       fontWeight: FontWeight.w400,
                     ),
@@ -45,13 +40,14 @@ class BodyOfDetailScreenWidget extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox.square(dimension: 4),
             Row(
               children: [
                 StarRating(
                   rating: restaurant.rating.toDouble(),
                   color: Colors.orange,
                 ),
-                const SizedBox.square(dimension: 4),
+                const SizedBox.square(dimension: 8),
                 Text(
                   restaurant.rating.toString(),
                   style: Theme.of(context).textTheme.bodyLarge,

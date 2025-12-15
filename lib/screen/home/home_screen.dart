@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:restaurant_app/data/model/restaurant_detail.dart';
 import 'package:restaurant_app/provider/home/restaurant_list_provider.dart';
 import 'package:restaurant_app/screen/home/restaurant_card_widget.dart';
 import 'package:restaurant_app/static/navigation_route.dart';
@@ -25,7 +26,18 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Restaurant List")),
+      appBar: AppBar(
+        title: const Text("Restaurant List"),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            tooltip: "Search",
+            onPressed: () {
+              Navigator.pushNamed(context, NavigationRoute.searchRoute.name);
+            },
+          ),
+        ],
+      ),
       body: Consumer<RestaurantListProvider>(
         builder: (context, value, child) {
           return switch (value.resultState) {
@@ -44,7 +56,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.pushNamed(
                         context,
                         NavigationRoute.detailRoute.name,
-                        arguments: restaurant.id,
+                        arguments: DetailArgs(
+                          restaurantId: restaurant.id,
+                          imageUrl: restaurant.picture,
+                        ),
                       );
                     },
                   );

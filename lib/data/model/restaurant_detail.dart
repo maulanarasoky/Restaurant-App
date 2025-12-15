@@ -93,3 +93,13 @@ class CustomerReview {
     );
   }
 }
+
+class DetailArgs {
+  final String restaurantId;
+  final String imageUrl;
+
+  DetailArgs({
+    required this.restaurantId,
+    required this.imageUrl,
+  });
+}

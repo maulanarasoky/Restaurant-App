@@ -43,6 +43,16 @@ class RestaurantTheme {
     );
   }
 
+  static TextStyle get textChipStyle {
+    return TextStyle(
+      backgroundColor: RestaurantColors.pastelBlue.color,
+      fontStyle: RestaurantTextStyles.labelMedium.fontStyle,
+      color: RestaurantColors.blue.color,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 1.5,
+    );
+  }
+
   static AppBarTheme get _appBarTheme {
     return AppBarTheme(
       toolbarTextStyle: _textTheme.titleLarge,
